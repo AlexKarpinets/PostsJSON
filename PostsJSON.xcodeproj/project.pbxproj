@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		FAECF5A826BFC2F400CFC9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5A726BFC2F400CFC9CD /* AppDelegate.swift */; };
 		FAECF5AA26BFC2F400CFC9CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5A926BFC2F400CFC9CD /* SceneDelegate.swift */; };
-		FAECF5AC26BFC2F400CFC9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5AB26BFC2F400CFC9CD /* ViewController.swift */; };
 		FAECF5AF26BFC2F400CFC9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAECF5AD26BFC2F400CFC9CD /* Main.storyboard */; };
 		FAECF5B126BFC2F900CFC9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAECF5B026BFC2F900CFC9CD /* Assets.xcassets */; };
 		FAECF5B426BFC2F900CFC9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAECF5B226BFC2F900CFC9CD /* LaunchScreen.storyboard */; };
+		FAECF5BC26BFC30F00CFC9CD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5BB26BFC30F00CFC9CD /* Post.swift */; };
+		FAECF5BE26BFC65A00CFC9CD /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5BD26BFC65A00CFC9CD /* PostsTableViewController.swift */; };
+		FAECF5C026BFC73500CFC9CD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5BF26BFC73500CFC9CD /* DetailViewController.swift */; };
+		FAECF5C226C0362C00CFC9CD /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5C126C0362C00CFC9CD /* PostCell.swift */; };
+		FAECF5C426C03BCC00CFC9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5C326C03BCC00CFC9CD /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FAECF5A426BFC2F300CFC9CD /* PostsJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostsJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAECF5A726BFC2F400CFC9CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAECF5A926BFC2F400CFC9CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAECF5AB26BFC2F400CFC9CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAECF5AE26BFC2F400CFC9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAECF5B026BFC2F900CFC9CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAECF5B326BFC2F900CFC9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAECF5B526BFC2F900CFC9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAECF5BB26BFC30F00CFC9CD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FAECF5BD26BFC65A00CFC9CD /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		FAECF5BF26BFC73500CFC9CD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FAECF5C126C0362C00CFC9CD /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		FAECF5C326C03BCC00CFC9CD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,7 @@
 		FAECF59B26BFC2F300CFC9CD = {
 			isa = PBXGroup;
 			children = (
+				FAECF5C526C04C0600CFC9CD /* Model */,
 				FAECF5A626BFC2F300CFC9CD /* PostsJSON */,
 				FAECF5A526BFC2F300CFC9CD /* Products */,
 			);
@@ -58,13 +67,32 @@
 			children = (
 				FAECF5A726BFC2F400CFC9CD /* AppDelegate.swift */,
 				FAECF5A926BFC2F400CFC9CD /* SceneDelegate.swift */,
-				FAECF5AB26BFC2F400CFC9CD /* ViewController.swift */,
 				FAECF5AD26BFC2F400CFC9CD /* Main.storyboard */,
+				FAECF5C626C04C2700CFC9CD /* ViewController */,
 				FAECF5B026BFC2F900CFC9CD /* Assets.xcassets */,
 				FAECF5B226BFC2F900CFC9CD /* LaunchScreen.storyboard */,
 				FAECF5B526BFC2F900CFC9CD /* Info.plist */,
 			);
 			path = PostsJSON;
+			sourceTree = "<group>";
+		};
+		FAECF5C526C04C0600CFC9CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAECF5BB26BFC30F00CFC9CD /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FAECF5C626C04C2700CFC9CD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FAECF5C326C03BCC00CFC9CD /* ViewController.swift */,
+				FAECF5BF26BFC73500CFC9CD /* DetailViewController.swift */,
+				FAECF5BD26BFC65A00CFC9CD /* PostsTableViewController.swift */,
+				FAECF5C126C0362C00CFC9CD /* PostCell.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +165,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAECF5AC26BFC2F400CFC9CD /* ViewController.swift in Sources */,
+				FAECF5C226C0362C00CFC9CD /* PostCell.swift in Sources */,
 				FAECF5A826BFC2F400CFC9CD /* AppDelegate.swift in Sources */,
 				FAECF5AA26BFC2F400CFC9CD /* SceneDelegate.swift in Sources */,
+				FAECF5C026BFC73500CFC9CD /* DetailViewController.swift in Sources */,
+				FAECF5C426C03BCC00CFC9CD /* ViewController.swift in Sources */,
+				FAECF5BC26BFC30F00CFC9CD /* Post.swift in Sources */,
+				FAECF5BE26BFC65A00CFC9CD /* PostsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
