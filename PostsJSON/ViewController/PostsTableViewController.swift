@@ -12,9 +12,9 @@ class PostsTableViewController: UITableViewController {
     private var posts: [Post] = []
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         tableView.rowHeight = 80
         fetchPost()
-        super.viewDidLoad()
     }
     
     // MARK: - Table view data source

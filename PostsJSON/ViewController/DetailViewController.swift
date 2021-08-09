@@ -16,16 +16,14 @@ class DetailViewController: UIViewController {
     var post: Post!
     
     override func viewDidLoad() {
-        setup()
         super.viewDidLoad()
+        setup()
     }
     
     private func setup() {
-        DispatchQueue.main.async {
-            self.iDLabel.text = "ID: \(String(self.post.id))"
-            self.titleLabel.text = "Title: \(self.post.title)"
-            self.bodyLabel.text = "Body: \(self.post.body)"
-        }
+        self.iDLabel.text = "ID: \(String(self.post.id))"
+        self.titleLabel.text = "Title: \(self.post.title)"
+        self.bodyLabel.text = "Body: \(self.post.body)"
     }
 }
 
