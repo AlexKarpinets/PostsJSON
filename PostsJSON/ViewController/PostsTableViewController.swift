@@ -52,28 +52,37 @@ class PostsTableViewController: UITableViewController {
             self.present(alert, animated: true)
         }
     }
-}
-
-// MARK: - Networking
-extension PostsTableViewController {
+    
     private func fetchPost() {
-        guard let url = URL(
-                string: "https://jsonplaceholder.typicode.com/posts") else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                self.showError()
-                return
+        NetworkManager.shared.fetchPost { posts in
+            DispatchQueue.main.async {
+                self.posts = posts
+                self.tableView.reloadData()
             }
-            
-            do {
-                self.posts = try JSONDecoder().decode([Post].self, from: data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print(error)
-            }
-        }.resume()
+        }
     }
 }
+
+//// MARK: - Networking (without NetworkManager)
+//extension PostsTableViewController {
+//    private func fetchPost() {
+//        guard let url = URL(
+//                string: "https://jsonplaceholder.typicode.com/posts") else { return }
+//
+//        URLSession.shared.dataTask(with: url) { data, _, error in
+//            guard let data = data else {
+//                self.showError()
+//                return
+//            }
+//
+//            do {
+//                self.posts = try JSONDecoder().decode([Post].self, from: data)
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                }
+//            } catch let error {
+//                print(error)
+//            }
+//        }.resume()
+//    }
+//}

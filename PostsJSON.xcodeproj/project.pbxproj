@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA7103E526C2A6C100ED8FE5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7103E426C2A6C100ED8FE5 /* NetworkManager.swift */; };
 		FAECF5A826BFC2F400CFC9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5A726BFC2F400CFC9CD /* AppDelegate.swift */; };
 		FAECF5AA26BFC2F400CFC9CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5A926BFC2F400CFC9CD /* SceneDelegate.swift */; };
 		FAECF5AF26BFC2F400CFC9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAECF5AD26BFC2F400CFC9CD /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA7103E426C2A6C100ED8FE5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FAECF5A426BFC2F300CFC9CD /* PostsJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostsJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAECF5A726BFC2F400CFC9CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAECF5A926BFC2F400CFC9CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				FAECF5A726BFC2F400CFC9CD /* AppDelegate.swift */,
 				FAECF5A926BFC2F400CFC9CD /* SceneDelegate.swift */,
 				FAECF5AD26BFC2F400CFC9CD /* Main.storyboard */,
+				FA7103E426C2A6C100ED8FE5 /* NetworkManager.swift */,
 				FAECF5C626C04C2700CFC9CD /* ViewController */,
 				FAECF5B026BFC2F900CFC9CD /* Assets.xcassets */,
 				FAECF5B226BFC2F900CFC9CD /* LaunchScreen.storyboard */,
@@ -169,6 +172,7 @@
 				FAECF5A826BFC2F400CFC9CD /* AppDelegate.swift in Sources */,
 				FAECF5AA26BFC2F400CFC9CD /* SceneDelegate.swift in Sources */,
 				FAECF5C026BFC73500CFC9CD /* DetailViewController.swift in Sources */,
+				FA7103E526C2A6C100ED8FE5 /* NetworkManager.swift in Sources */,
 				FAECF5C426C03BCC00CFC9CD /* ViewController.swift in Sources */,
 				FAECF5BC26BFC30F00CFC9CD /* Post.swift in Sources */,
 				FAECF5BE26BFC65A00CFC9CD /* PostsTableViewController.swift in Sources */,
