@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PostsTableViewController: UITableViewController {
     
@@ -14,7 +15,7 @@ class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 80
-        fetchPost()
+        alamofireFetchPost()
     }
     
     // MARK: - Table view data source
@@ -43,25 +44,41 @@ class PostsTableViewController: UITableViewController {
     }
     
     // MARK: - Private func
-    private func showError() {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Ошибка загрузки данных",
-                                          message: "Возникла проблема с загрузкой; пожалуйста проверьте соединение и повторите попытку позже.",
-                                          preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alert, animated: true)
-        }
-    }
-    
-    private func fetchPost() {
-        NetworkManager.shared.fetchPost { posts in
-            DispatchQueue.main.async {
-                self.posts = posts
-                self.tableView.reloadData()
+    private func alamofireFetchPost() {
+        AF.request("https://jsonplaceholder.typicode.com/posts", method: .get)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    self.posts = Post.getPosts(from: value)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
             }
-        }
     }
 }
+
+//    private func showError() {
+//        DispatchQueue.main.async {
+//            let alert = UIAlertController(title: "Ошибка загрузки данных",
+//                                          message: "Возникла проблема с загрузкой; пожалуйста проверьте соединение и повторите попытку позже.",
+//                                          preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default))
+//            self.present(alert, animated: true)
+//        }
+//    }
+
+//    private func fetchPost() {
+//        NetworkManager.shared.fetchPost { posts in
+//            DispatchQueue.main.async {
+//                self.posts = posts
+//                self.tableView.reloadData()
+//            }
+//        }
+//    }
 
 //// MARK: - Networking (without NetworkManager)
 //extension PostsTableViewController {
