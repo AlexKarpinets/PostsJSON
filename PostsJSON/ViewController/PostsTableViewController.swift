@@ -24,6 +24,7 @@ class PostsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
@@ -69,25 +70,19 @@ class PostsTableViewController: UITableViewController {
         detailVC.post = post
     }
     
+    // MARK: - IBActions
     @IBAction func exitButton(_ sender: Any) {
         dismiss(animated: true)
     }
     
     // MARK: - Private func
     private func alamofireFetchPost() {
-        AF.request("https://jsonplaceholder.typicode.com/posts", method: .get)
-            .validate()
-            .responseJSON { dataResponse in
-                switch dataResponse.result {
-                case .success(let value):
-                    self.posts = Post.getPosts(from: value)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                case .failure(let error):
-                    print(error)
-                }
+        AlamofireNetwork.sendRequest { posts in
+            DispatchQueue.main.async {
+                self.posts = posts
+                self.tableView.reloadData()
             }
+        }
     }
 }
 
@@ -98,15 +93,6 @@ class PostsTableViewController: UITableViewController {
 //                                          preferredStyle: .alert)
 //            alert.addAction(UIAlertAction(title: "OK", style: .default))
 //            self.present(alert, animated: true)
-//        }
-//    }
-
-//    private func fetchPost() {
-//        NetworkManager.shared.fetchPost { posts in
-//            DispatchQueue.main.async {
-//                self.posts = posts
-//                self.tableView.reloadData()
-//            }
 //        }
 //    }
 
