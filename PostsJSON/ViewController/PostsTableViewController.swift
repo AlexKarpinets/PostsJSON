@@ -10,22 +10,47 @@ import Alamofire
 
 class PostsTableViewController: UITableViewController {
     
+    // MARK: - Private properties
     private var posts: [Post] = []
+    private var filteredPosts: [Post] = []
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false}
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
         tableView.rowHeight = 80
         alamofireFetchPost()
     }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        posts.count
+        if isFiltering {
+            return filteredPosts.count
+        }
+        return posts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostCell
-        let post = posts[indexPath.row]
+        var post: Post
+        
+        if isFiltering {
+            post = filteredPosts[indexPath.row]
+        } else {
+            post = posts[indexPath.row]
+        }
         cell.configur(with: post)
         
         return cell
@@ -35,7 +60,12 @@ class PostsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? DetailViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let post = posts[indexPath.row]
+        let post: Post
+        if isFiltering {
+            post = filteredPosts[indexPath.row]
+        } else {
+            post = posts[indexPath.row]
+        }
         detailVC.post = post
     }
     
@@ -79,6 +109,21 @@ class PostsTableViewController: UITableViewController {
 //            }
 //        }
 //    }
+
+// MARK: - Extensions
+extension PostsTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filteredContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filteredContentForSearchText(_ searchText: String) {
+        filteredPosts = posts.filter({ (post: Post) -> Bool in
+            return
+                post.title.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
+}
 
 //// MARK: - Networking (without NetworkManager)
 //extension PostsTableViewController {
