@@ -42,12 +42,11 @@ class AlamofireNetwork {
     func sendRequest(_ complition: @escaping ([Post]) -> Void) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
         AF.request(url, method: .get).responseJSON { (response) in
+            
             switch response.result {
             case .success(let value):
                 guard let arrayOfItems = value as? Array<[String: Any]> else { return }
-                
                 var posts: [Post] = []
-                
                 for field in arrayOfItems {
                     let post = Post(postData: field)
                     posts.append(post)
