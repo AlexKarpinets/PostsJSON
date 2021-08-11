@@ -35,7 +35,11 @@ class NetworkManager {
 
 class AlamofireNetwork {
     
-    static func sendRequest(_ complition: @escaping ([Post]) -> Void) {
+    static let shared = AlamofireNetwork()
+    
+    private init() {}
+    
+    func sendRequest(_ complition: @escaping ([Post]) -> Void) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
         AF.request(url, method: .get).responseJSON { (response) in
             switch response.result {

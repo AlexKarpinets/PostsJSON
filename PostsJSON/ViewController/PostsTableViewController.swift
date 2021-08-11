@@ -77,7 +77,7 @@ class PostsTableViewController: UITableViewController {
     
     // MARK: - Private func
     private func alamofireFetchPost() {
-        AlamofireNetwork.sendRequest { posts in
+        AlamofireNetwork.shared.sendRequest { posts in
             DispatchQueue.main.async {
                 self.posts = posts
                 self.tableView.reloadData()
