@@ -96,7 +96,7 @@ class PostsTableViewController: UITableViewController {
     
     private func creditsTapped() {
         DispatchQueue.main.async {
-            let creditsAlert = UIAlertController(title: "Данные поступают из", message: "https://jsonplaceholder.typicode.com/posts", preferredStyle: .alert)
+            let creditsAlert = UIAlertController(title: "The data comes from", message: "https://jsonplaceholder.typicode.com/posts", preferredStyle: .alert)
             creditsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(creditsAlert, animated: true)
         }
