@@ -50,7 +50,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="aeS-L5-wqb" kind="presentation" modalPresentationStyle="fullScreen" id="wsg-iP-xqb"/>
+                                    <segue destination="aeS-L5-wqb" kind="presentation" modalPresentationStyle="fullScreen" id="Zqh-gr-4jk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
+            <point key="canvasLocation" x="1907" y="100"/>
         </scene>
         <!--Posts-->
         <scene sceneID="OJG-nX-Q5x">
@@ -132,6 +132,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Posts" id="HpB-q4-GkD">
+                        <barButtonItem key="leftBarButtonItem" title="Credits" id="Tu3-sY-1HP">
+                            <connections>
+                                <action selector="creditsButton:" destination="c6j-Be-DOO" id="NhN-F8-ojJ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Exit" id="aPB-8B-F56">
                             <color key="tintColor" red="0.91966730356216431" green="0.12755709886550903" blue="0.3236241340637207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -142,7 +147,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6f-oY-1cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2711.25" y="92.957746478873247"/>
+            <point key="canvasLocation" x="3708.75" y="92.957746478873247"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="CI8-J9-DNj">
@@ -175,13 +180,20 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ox4-jI-rWQ">
+                                <rect key="frame" x="40" y="327" width="240" height="221"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PXe-JL-LXy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="usB-yo-qV5" firstAttribute="top" secondItem="PXe-JL-LXy" secondAttribute="top" constant="36" id="1uw-ha-cJa"/>
+                            <constraint firstItem="PXe-JL-LXy" firstAttribute="bottom" secondItem="ox4-jI-rWQ" secondAttribute="bottom" constant="20" id="2yU-Nh-lWR"/>
+                            <constraint firstItem="ox4-jI-rWQ" firstAttribute="centerX" secondItem="z24-wQ-91r" secondAttribute="centerX" id="F1p-6P-1qh"/>
                             <constraint firstItem="PXe-JL-LXy" firstAttribute="trailing" secondItem="usB-yo-qV5" secondAttribute="trailing" constant="10" id="fZY-iu-s82"/>
+                            <constraint firstItem="ox4-jI-rWQ" firstAttribute="top" secondItem="usB-yo-qV5" secondAttribute="bottom" constant="50" id="fgL-sQ-s9O"/>
                             <constraint firstItem="usB-yo-qV5" firstAttribute="leading" secondItem="PXe-JL-LXy" secondAttribute="leading" constant="10" id="ir3-lz-ATA"/>
+                            <constraint firstItem="ox4-jI-rWQ" firstAttribute="leading" secondItem="PXe-JL-LXy" secondAttribute="leading" constant="40" id="maF-dS-uS5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s3V-da-asv"/>
@@ -193,12 +205,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxU-5j-bU5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3579.375" y="89.788732394366193"/>
+            <point key="canvasLocation" x="4576.875" y="89.788732394366193"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j3u-eF-xuK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aeS-L5-wqb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" id="aeS-L5-wqb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="cuG-N6-XvQ"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="yjl-1R-hYx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J3v-By-Dq9">
@@ -212,7 +225,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npg-QV-h7e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783.125" y="92.957746478873247"/>
+            <point key="canvasLocation" x="2780.625" y="92.957746478873247"/>
         </scene>
     </scenes>
     <resources>

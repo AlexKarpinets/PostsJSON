@@ -57,6 +57,11 @@ class PostsTableViewController: UITableViewController {
         return cell
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? DetailViewController else { return }
@@ -75,6 +80,10 @@ class PostsTableViewController: UITableViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func creditsButton(_ sender: UIBarButtonItem) {
+        creditsTapped()
+    }
+    
     // MARK: - Private func
     private func alamofireFetchPost() {
         AlamofireNetwork.shared.sendRequest { posts in
@@ -84,17 +93,15 @@ class PostsTableViewController: UITableViewController {
             }
         }
     }
+    
+    private func creditsTapped() {
+        DispatchQueue.main.async {
+            let creditsAlert = UIAlertController(title: "Данные поступают из", message: "https://jsonplaceholder.typicode.com/posts", preferredStyle: .alert)
+            creditsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(creditsAlert, animated: true)
+        }
+    }
 }
-
-//    private func showError() {
-//        DispatchQueue.main.async {
-//            let alert = UIAlertController(title: "Ошибка загрузки данных",
-//                                          message: "Возникла проблема с загрузкой; пожалуйста проверьте соединение и повторите попытку позже.",
-//                                          preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default))
-//            self.present(alert, animated: true)
-//        }
-//    }
 
 // MARK: - Extensions
 extension PostsTableViewController: UISearchResultsUpdating {
