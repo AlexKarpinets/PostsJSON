@@ -62,6 +62,14 @@ class PostsTableViewController: UITableViewController {
         view.endEditing(true)
     }
     
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            posts.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? DetailViewController else { return }
@@ -96,7 +104,8 @@ class PostsTableViewController: UITableViewController {
     
     private func creditsTapped() {
         DispatchQueue.main.async {
-            let creditsAlert = UIAlertController(title: "The data comes from", message: "https://jsonplaceholder.typicode.com/posts", preferredStyle: .alert)
+            let creditsAlert = UIAlertController(title: "The data comes from",
+                                                 message: "https://jsonplaceholder.typicode.com/posts", preferredStyle: .alert)
             creditsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(creditsAlert, animated: true)
         }
@@ -104,6 +113,7 @@ class PostsTableViewController: UITableViewController {
 }
 
 // MARK: - Extensions
+
 extension PostsTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filteredContentForSearchText(searchController.searchBar.text!)
