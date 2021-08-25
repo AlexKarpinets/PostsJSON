@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		906B296B7EF8BED2CCC703F7 /* Pods_PostsJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9434C2A79A0CEBCC3A785C9B /* Pods_PostsJSON.framework */; };
+		FA3999DA26D6A8B1001778A4 /* PostRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3999D926D6A8B1001778A4 /* PostRealm.swift */; };
+		FA3999DC26D6AE47001778A4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3999DB26D6AE47001778A4 /* StorageManager.swift */; };
+		FA3999DE26D6B371001778A4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3999DD26D6B371001778A4 /* DataManager.swift */; };
 		FA7103E526C2A6C100ED8FE5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7103E426C2A6C100ED8FE5 /* NetworkManager.swift */; };
 		FAECF5A826BFC2F400CFC9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5A726BFC2F400CFC9CD /* AppDelegate.swift */; };
 		FAECF5AA26BFC2F400CFC9CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF5A926BFC2F400CFC9CD /* SceneDelegate.swift */; };
@@ -25,6 +28,9 @@
 		3BB90AD2F28F054D00CD4806 /* Pods-PostsJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostsJSON.debug.xcconfig"; path = "Target Support Files/Pods-PostsJSON/Pods-PostsJSON.debug.xcconfig"; sourceTree = "<group>"; };
 		9434C2A79A0CEBCC3A785C9B /* Pods_PostsJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PostsJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98003BDCAE09D0540BDEAD40 /* Pods-PostsJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostsJSON.release.xcconfig"; path = "Target Support Files/Pods-PostsJSON/Pods-PostsJSON.release.xcconfig"; sourceTree = "<group>"; };
+		FA3999D926D6A8B1001778A4 /* PostRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRealm.swift; sourceTree = "<group>"; };
+		FA3999DB26D6AE47001778A4 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FA3999DD26D6B371001778A4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FA7103E426C2A6C100ED8FE5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FAECF5A426BFC2F300CFC9CD /* PostsJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostsJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAECF5A726BFC2F400CFC9CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA3999DF26D6B7B7001778A4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA3999DB26D6AE47001778A4 /* StorageManager.swift */,
+				FA3999DD26D6B371001778A4 /* DataManager.swift */,
+				FA7103E426C2A6C100ED8FE5 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		FAECF59B26BFC2F300CFC9CD = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +110,7 @@
 				FAECF5A726BFC2F400CFC9CD /* AppDelegate.swift */,
 				FAECF5A926BFC2F400CFC9CD /* SceneDelegate.swift */,
 				FAECF5AD26BFC2F400CFC9CD /* Main.storyboard */,
-				FA7103E426C2A6C100ED8FE5 /* NetworkManager.swift */,
+				FA3999DF26D6B7B7001778A4 /* Services */,
 				FAECF5C626C04C2700CFC9CD /* ViewController */,
 				FAECF5B026BFC2F900CFC9CD /* Assets.xcassets */,
 				FAECF5B226BFC2F900CFC9CD /* LaunchScreen.storyboard */,
@@ -107,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				FAECF5BB26BFC30F00CFC9CD /* Post.swift */,
+				FA3999D926D6A8B1001778A4 /* PostRealm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +259,9 @@
 				FAECF5C026BFC73500CFC9CD /* DetailViewController.swift in Sources */,
 				FA7103E526C2A6C100ED8FE5 /* NetworkManager.swift in Sources */,
 				FAECF5C426C03BCC00CFC9CD /* ViewController.swift in Sources */,
+				FA3999DA26D6A8B1001778A4 /* PostRealm.swift in Sources */,
+				FA3999DC26D6AE47001778A4 /* StorageManager.swift in Sources */,
+				FA3999DE26D6B371001778A4 /* DataManager.swift in Sources */,
 				FAECF5BC26BFC30F00CFC9CD /* Post.swift in Sources */,
 				FAECF5BE26BFC65A00CFC9CD /* PostsTableViewController.swift in Sources */,
 			);

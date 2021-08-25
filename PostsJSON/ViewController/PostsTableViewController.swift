@@ -25,6 +25,8 @@ class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = editButtonItem
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
@@ -84,10 +86,6 @@ class PostsTableViewController: UITableViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func exitButton(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
     @IBAction func creditsButton(_ sender: UIBarButtonItem) {
         creditsTapped()
     }

@@ -20,6 +20,10 @@ class DetailViewController: UIViewController {
         setup()
     }
     
+    @IBAction func exitButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
     private func setup() {
         self.iDLabel.text = "ID: \(String(self.post.id))"
         self.titleLabel.text = "Title: \(self.post.title)"

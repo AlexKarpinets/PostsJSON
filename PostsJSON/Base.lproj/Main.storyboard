@@ -137,12 +137,6 @@
                                 <action selector="creditsButton:" destination="c6j-Be-DOO" id="NhN-F8-ojJ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Exit" id="aPB-8B-F56">
-                            <color key="tintColor" red="0.91966730356216431" green="0.12755709886550903" blue="0.3236241340637207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="exitButton:" destination="c6j-Be-DOO" id="ZkU-wE-wpL"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6f-oY-1cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -196,7 +190,14 @@
                             <constraint firstItem="ox4-jI-rWQ" firstAttribute="leading" secondItem="PXe-JL-LXy" secondAttribute="leading" constant="40" id="maF-dS-uS5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="s3V-da-asv"/>
+                    <navigationItem key="navigationItem" id="s3V-da-asv">
+                        <barButtonItem key="rightBarButtonItem" title="Exit" id="znQ-1c-SOi">
+                            <color key="tintColor" red="0.91966730356216431" green="0.12755709886550903" blue="0.3236241340637207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="exitButton:" destination="RYw-7B-rnW" id="bve-Qg-i1t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bodyLabel" destination="ZV6-Tl-WVR" id="DkX-EO-qfd"/>
                         <outlet property="iDLabel" destination="nOf-xb-Fvz" id="Fzs-iS-ie9"/>

@@ -6,5 +6,6 @@ target 'PostsJSON' do
   use_frameworks!
 
   pod 'Alamofire'
+  pod 'RealmSwift', '~>10'
 
 end
